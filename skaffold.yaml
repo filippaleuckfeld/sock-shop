@@ -11,7 +11,7 @@ build:
   #- image: carts
   #  context: carts/docker/carts
   - image: catalogue
-    context: catalogue/docker/catalogue
+    context: catalogue
   tagPolicy:
     gitCommit: {}
   local:
