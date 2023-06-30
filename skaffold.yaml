@@ -9,7 +9,7 @@ build:
   # here:
   # https://skaffold.dev/docs/concepts/#image-repository-handling
   - image: carts
-    context: carts
+    context: carts/docker/carts
   tagPolicy:
     gitCommit: {}
   local:
