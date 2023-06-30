@@ -27,16 +27,16 @@ spec:
         build: 
          context: ../carts # Path to dockerfile
          dockerfile: Dockerfile # name of dockerfile
-        env:
-         - name: JAVA_OPTS
-           value: -Xms64m -Xmx128m -XX:+UseG1GC -Djava.security.egd=file:/dev/urandom -Dspring.zipkin.enabled=false
-        resources:
-          limits:
-            cpu: 300m
-            memory: 500Mi
-          requests:
-            cpu: 100m
-            memory: 200Mi
+        # env:
+        #  - name: JAVA_OPTS
+        #    value: -Xms64m -Xmx128m -XX:+UseG1GC -Djava.security.egd=file:/dev/urandom -Dspring.zipkin.enabled=false
+        # resources:
+        #   limits:
+        #     cpu: 300m
+        #     memory: 500Mi
+        #   requests:
+        #     cpu: 100m
+        #     memory: 200Mi
         ports:
         - containerPort: 80
         securityContext:
@@ -55,8 +55,8 @@ spec:
         - name: tmp-volume
           emptyDir:
             medium: Memory
-      nodeSelector:
-        beta.kubernetes.io/os: linux
+      # nodeSelector:
+      #   beta.kubernetes.io/os: linux
 ---
 apiVersion: v1
 kind: Service
@@ -114,8 +114,8 @@ spec:
         - name: tmp-volume
           emptyDir:
             medium: Memory
-      nodeSelector:
-        beta.kubernetes.io/os: linux
+      # nodeSelector:
+      #   beta.kubernetes.io/os: linux
 ---
 apiVersion: v1
 kind: Service
